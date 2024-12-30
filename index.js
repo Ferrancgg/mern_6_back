@@ -1,7 +1,7 @@
 console.log("hola mundo")
 const express=require("express")
 const app=express()
-const PORT=3000
+const PORT=4001
 app.use("/api/v1",(req,res,next)=>{
     return res.status(200).json("esto funciona")
 })
