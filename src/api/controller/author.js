@@ -32,4 +32,17 @@ const createAuthor = async (req, res, next) => {
     }
 };
 
-module.exports = { getAuthors, createAuthor };
+const getAuthorById=async(req,res,next)=>{
+    try{
+        const {id}=req.params
+        const author=await Author.findById(id)
+        return res.status(200).json(author)
+
+    }
+    catch(error){
+        return res.status(400).json({message:"error al buscar por ID"},error)
+    }
+   
+}
+
+module.exports = { getAuthors, createAuthor,getAuthorById };

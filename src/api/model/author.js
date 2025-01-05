@@ -1,7 +1,6 @@
 const { timeStamp } = require("console")
 const mongoose=require("mongoose")
 const {Schema,model}=mongoose
-// const { Script } = require("vm")
 const authorSchema= new Schema(
     {nombre:{type:String, required:true},
     nacionalidad:{type:String,required:true},
