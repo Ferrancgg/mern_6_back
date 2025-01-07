@@ -24,7 +24,7 @@ const createAuthor = async (req, res, next) => {
 const getAuthorById = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const author = await Author.findById(id);
+    const author = await Author.findById(id).populate("libros");
     return res.status(200).json(author);
   } catch (error) {
     return res.status(400).json({ message: "error al buscar por ID" }, error);
